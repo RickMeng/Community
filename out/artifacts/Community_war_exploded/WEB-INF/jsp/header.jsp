@@ -14,6 +14,7 @@
                 </c:if>
                 <c:if test="${user != null}">
                     <li><a href="#">Collection</a></li>
+                    <%--如果seesion里key对应的value是一个类，那么可以直接这样获取类中的属性--%>
                     <li><a href="">${user.username}</a></li>
                     <li><a href="">Notification <span class="new badge white-text">4</span></a></li>
                     <li><a href="${pageContext.request.contextPath}/user/logout">Layout</a></li>

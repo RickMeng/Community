@@ -18,7 +18,7 @@ public class PostTest {
         post.setUserId(1);
         post.setTagId(2);
         post.setTitle("war");
-        post.setContext("end");
+        post.setContent("end");
         postMapper.insertPost(post);
 
     }

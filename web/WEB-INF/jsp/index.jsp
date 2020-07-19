@@ -21,7 +21,7 @@
 <body>
 <jsp:include page="header.jsp"/>
 
-//Butten area
+<%--Butten area--%>
 <div class="fixed-action-btn ">
     <a class="btn-floating btn-large teal darken-2 ">
         <i class="large material-icons ">mode_edit</i>
@@ -37,15 +37,17 @@
 <div class="container">
     <div class="row">
         <div class="col s12 l7 offset-l2">
-            //tag area
+            <%--tag area--%>
             <div class="container">
                 <br>
                 <a class="waves-effect waves-light btn">Life</a>
                 <a class="waves-effect waves-light btn">Second-hand</a>
                 <a class="waves-effect waves-light btn">Food</a>
+                <%--href="javascript:;" 这个可以屏蔽a标签的跳转--%>
+                <a class="btn-floating btn-large waves-effect waves-light red" href="javascript:;" onclick="publish()"><i class="material-icons">add</i></a>
             </div>
             <br>
-            //content area
+            <%--content area--%>
             <div class="collection">
                 <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
                 <a href="#!" class="collection-item"><span class="new badge teal darken-2">4</span>Alan</a>
@@ -59,7 +61,7 @@
                 <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
             </div>
         </div>
-        //pagination
+        <%--pagination--%>
         <div class="col s12 l8 offset-l4">
             <ul class="pagination">
                 <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
@@ -81,6 +83,15 @@
         $(".sidenav").sidenav();
         $('.fixed-action-btn').floatingActionButton();
     });
+
+    function publish(){
+        var user = "${user}";
+        if(user==null){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/post/form";
+        }
+    }
 </script>
 
 </body>

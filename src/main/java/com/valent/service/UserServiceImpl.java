@@ -23,6 +23,7 @@ public class UserServiceImpl implements UserService{
         User user=userMapper.findUserByUsername(username);
         if(user!=null){
             if(user.getPassword().equals(password)){
+
                 //如果用户登陆成功，把user【对象】存到session中
                 session.setAttribute("user",user);
                 return "101";//登陆成功

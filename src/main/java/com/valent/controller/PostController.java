@@ -20,9 +20,10 @@ public class PostController {
         return "postForm";
     }
 
-//    @RequestMapping("/save")
-//    public String save(Post post, HttpSession session){
-//        postService.insertPost(post,session);
-//    }
+    @RequestMapping("/save")
+    public String save(Post post, HttpSession session){
+        postService.insertPost(post,session);
+        return "redirect:/index";
+    }
 
 }

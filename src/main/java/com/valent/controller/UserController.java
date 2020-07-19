@@ -37,11 +37,6 @@ public class UserController {
     @RequestMapping("/login")
     public String login(String username, String password, HttpSession session){
         String sign = userService.login(username,password,session);
-        //判断sign，跳转不同视图(继续登陆or跳转到首页)
-        //登陆成功的话，把登陆信息添加到session中
-//        if(sign.equals("101")){
-//            session.setAttribute("userSession",username);
-//        }
         return sign;
     }
 
