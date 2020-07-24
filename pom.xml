@@ -75,6 +75,14 @@
             <artifactId>lombok</artifactId>
             <version>1.18.12</version>
         </dependency>
+
+        <!--shiro-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-all</artifactId>
+            <version>1.5.1</version>
+        </dependency>
+
     </dependencies>
 
     <!--静态资源导出-->

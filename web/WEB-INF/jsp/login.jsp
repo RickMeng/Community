@@ -21,7 +21,7 @@
     <div class="row">
         <div class="col s12 l5 offset-l3">
             <h2 class="teal-text text-lighten-3">Login</h2>
-            <form   method="post" id="loginform">
+            <form   method="post" id="loginform" action="${pageContext.request.contextPath}/user/login">
                 <div class="input-field">
                     <input type="text" id="username" name="username">
                     <label for="username" id="ulabel">Username</label>
@@ -31,7 +31,7 @@
                     <label for="password"id="plabel">Password</label>
                 </div>
                 <div class="input-field center">
-                    <button class="btn" type="submit" onclick="login()">Login</button>
+                    <input class="btn" type="submit" value="Login">
 <%--                    <button class="btn-large waves-effect waves-light" type="submit" onclick="login()">--%>
 <%--                        <i class="material-icons right">LOG</i>--%>
 <%--                    </button>--%>
@@ -46,6 +46,34 @@
     $(document).ready(function(){
         $(".sidenav").sidenav();
     });
+</script>
+
+
+
+<script>
+
+    function login() {
+        //获取表单信息
+        //这个formData获取到的信息是键值对的形式，key是name，name一定要和controller里对应
+        var formData =$("#loginform").serialize();
+
+        $.post({
+            url:"${pageContext.request.contextPath}/user/login",
+            //data:{'username':$('#username').val(),"password":$('#password').val()},
+            data:formData,
+            type:"post",
+            success:function (sign) {
+                if(sign=="101"){
+                    window.location.href="${pageContext.request.contextPath}/index"
+                }else {
+                    alert("wrong username or password");
+                    return;
+                }
+            }
+
+        })
+    }
+
 </script>
 
 
@@ -99,32 +127,6 @@
 <%--</script>--%>
 
 
-
-<script>
-
-    function login() {
-        //获取表单信息
-        //这个formData获取到的信息是键值对的形式，key是name，name一定要和controller里对应
-        var formData =$("#loginform").serialize();
-
-        $.post({
-            url:"${pageContext.request.contextPath}/user/login",
-            //data:{'username':$('#username').val(),"password":$('#password').val()},
-            data:formData,
-            type:"post",
-            success:function (sign) {
-                if(sign=="101"){
-                    window.location.href="${pageContext.request.contextPath}/index"
-                }else {
-                    alert("wrong username or password");
-                    return;
-                }
-            }
-
-        })
-    }
-
-</script>
 
 
 

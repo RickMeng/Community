@@ -9,7 +9,7 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <c:if test="${user == null}">
-                    <li><a href="${pageContext.request.contextPath}/user/loginpage">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/login">Login</a></li>
                     <li><a href="${pageContext.request.contextPath}/user/registerpage">Register</a></li>
                 </c:if>
                 <c:if test="${user != null}">
@@ -22,7 +22,7 @@
             </ul>
             <ul class="sidenav grey lighten-2" id="mobile-menu">
                 <c:if test="${user == null}">
-                    <li><a href="${pageContext.request.contextPath}/user/loginpage">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/login">Login</a></li>
                     <li><a href="${pageContext.request.contextPath}/user/registerpage">Register</a></li>
                 </c:if>
                 <c:if test="${user != null}">

@@ -29,6 +29,23 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.1.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.1.9.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.1.9.RELEASE" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-all:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-aspectj:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-cache:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-core:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-config-ogdl:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-core:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-cipher:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-core:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-crypto-hash:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-ehcache:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-event:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-guice:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-hazelcast:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-lang:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-quartz:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.5.1" />
+          <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.5.1" />
         </element>
       </element>
     </root>

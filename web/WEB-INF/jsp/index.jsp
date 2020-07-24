@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>真正的主页面</title>
@@ -37,15 +38,18 @@
 <div class="container">
     <div class="row">
         <div class="col s12 l7 offset-l2">
+            <%--search area--%>
+            <form action="${pageContext.request.contextPath}/index" method="post">
+                <div class="input-field">
+                    <i class="material-icons prefix">search</i>
+                    <input id="search" placeholder="Type keyword" type="text" class="validate" value="${title}">
+                </div>
             <%--tag area--%>
-            <div class="container">
-                <br>
-                <a class="waves-effect waves-light btn">Life</a>
-                <a class="waves-effect waves-light btn">Second-hand</a>
-                <a class="waves-effect waves-light btn">Food</a>
-                <%--href="javascript:;" 这个可以屏蔽a标签的跳转--%>
-                <a class="btn-floating btn-large waves-effect waves-light red" href="javascript:;" onclick="publish()"><i class="material-icons">add</i></a>
-            </div>
+            <a class="waves-effect waves-light btn">Life</a>
+            <a class="waves-effect waves-light btn">Second-hand</a>
+            <a class="waves-effect waves-light btn">Food</a>
+            <%--href="javascript:;" 这个可以屏蔽a标签的跳转--%>
+            <a class="btn-floating btn-large waves-effect waves-light red" href="javascript:;" onclick="publish()"><i class="material-icons">add</i></a>
             <br>
             <%--content area--%>
             <div class="collection">
@@ -54,23 +58,31 @@
                 <a href="#!" class="collection-item">Alan</a>
                 <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
                 <a href="#!" class="collection-item">Alan</a>
-                <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
-                <a href="#!" class="collection-item">Alan</a>
-                <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
-                <a href="#!" class="collection-item">Alan</a>
-                <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
+                <c:if test="${postList!=null}">
+                    <c:forEach items="${postList}" var="post">
+                        <a href="${pageContext.request.contextPath}/post/detail?id=${post.postId}" class="collection-item"><span class="badge">${post.viewCount}</span>${post.title}</a>
+                    </c:forEach>
+                </c:if>
+                <c:if test="${postList==null}">
+                    <a href="#!" class="collection-item">Nothing</a>
+                </c:if>
+
             </div>
+
         </div>
         <%--pagination--%>
         <div class="col s12 l8 offset-l4">
             <ul class="pagination">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active teal darken-2"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons ">chevron_right</i></a></li>
+                <c:if test="${currentPage ne 1}">
+                    <%--注意这边的disabled--%>
+                    <li class="waves-effect"><a href="${pageContext.request.contextPath}/index?page=${currentPage-1}"><i class="material-icons">chevron_left</i></a></li>
+                </c:if>
+                <c:forEach begin="1" end="${totalPage}" var="page">
+                    <li class="${currentPage eq page ? 'active teal darken-2' : ''}"><a href="${pageContext.request.contextPath}/index?page=${page}">${page}</a></li>
+                </c:forEach>
+                <c:if test="${currentPage ne totalPage}">
+                    <li class="waves-effect"><a href="${pageContext.request.contextPath}/index?page=${currentPage+1}"><i class="material-icons">chevron_right</i></a></li>
+                </c:if>
             </ul>
         </div>
     </div>
@@ -86,7 +98,7 @@
 
     function publish(){
         var user = "${user}";
-        if(user==null){
+        if(user==""){
             alert("Please log in!")
         }else {
             window.location.href="${pageContext.request.contextPath}/post/form";

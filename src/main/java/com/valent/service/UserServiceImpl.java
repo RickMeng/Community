@@ -34,4 +34,8 @@ public class UserServiceImpl implements UserService{
             return "102";//登陆失败
         }
     }
+
+    public User findUserByUsername(String Username) {
+        return userMapper.findUserByUsername(Username);
+    }
 }

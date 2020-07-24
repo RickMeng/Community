@@ -7,12 +7,37 @@
 <!--namespace绑定一个对应的dao/mapper接口-->
 <mapper namespace="com.valent.dao.PostMapper">
 
+    <sql id="query_question_clause">
+        <if test="title != null and title != ''">
+            and title like concat('%',#{title},'%')
+        </if>
+    </sql>
+
+    <!--query all the posts-->
     <select id="selectAll" resultType="com.valent.pojo.Post">
     select * from community.post
+    <where>
+        <include refid="query_question_clause"></include>
+    </where>
+    limit #{beginPage},#{pageCount}
     </select>
 
+    <!--get the number of record-->
+    <select id="getTotal"  resultType="java.lang.Integer" parameterType="string" >
+        select count(1) from community.post
+        <where>
+            <include refid="query_question_clause"></include>
+        </where>
+    </select>
+
+    <!--inser a posty-->
     <insert id="insertPost" parameterType="Post">
         insert into community.post(userid,tagid,title,content,createtime,updatetime)
         values (#{userId},#{tagId},#{title},#{content},#{createTime},#{updateTime})
     </insert>
+
+
+    <select id="selectById" parameterType="string" resultType="Post">
+        select * from community.post where postid=#{id}
+    </select>
 </mapper>

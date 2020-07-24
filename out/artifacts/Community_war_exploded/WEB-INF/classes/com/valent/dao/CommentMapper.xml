@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.valent.dao.CommentMapper">
+
+    <select id="selectAllByPostId" resultType="Comment" parameterType="java.lang.Integer">
+        select * from community.comment where postid=#{id} order by id desc;
+    </select>
+
+    <insert id="insertComment" parameterType="Comment">
+        insert into community.comment values(content,userid,postid,createtime)
+        values (#{content},#{userId},#{postId},#{createTime})
+    </insert>
+
+
+
+</mapper>

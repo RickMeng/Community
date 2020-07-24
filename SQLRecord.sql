@@ -13,3 +13,16 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
 
 insert into user()
+
+
+create table comment(
+commentid int auto_increment,
+content varchar(100) not null,
+userid int not null,
+postid int not null,
+checked int default 0,
+createtime datetime,
+primary key(commentid),
+foreign key(userid) references user(userid),
+foreign key(postid) references post(postid)
+)
