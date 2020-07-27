@@ -43,4 +43,9 @@ public class PostServiceImpl implements PostService{
     public Post selectById(Integer id) {
         return postMapper.selectById(id);
     }
+
+    public Post selectAndViewCountPlusOne(Integer id) {
+        postMapper.AddViewCount(id);
+        return postMapper.selectById(id);
+    }
 }

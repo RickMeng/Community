@@ -14,4 +14,8 @@
         select * from community.user where username=#{value}
     </select>
 
+    <select id="findUserByUserId" parameterType="java.lang.Integer" resultType="User">
+        select * from community.user where userid=#{id}
+    </select>
+
 </mapper>

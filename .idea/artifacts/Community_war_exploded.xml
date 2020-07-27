@@ -46,6 +46,9 @@
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-quartz:1.5.1" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-spring:1.5.1" />
           <element id="library" level="project" name="Maven: org.apache.shiro:shiro-web:1.5.1" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.22" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-simple:1.7.22" />
+          <element id="library" level="project" name="Maven: org.owasp.encoder:encoder:1.2.2" />
         </element>
       </element>
     </root>

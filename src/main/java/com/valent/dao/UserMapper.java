@@ -1,6 +1,7 @@
 package com.valent.dao;
 
 import com.valent.pojo.User;
+import org.apache.ibatis.annotations.Param;
 
 public interface UserMapper {
 
@@ -9,4 +10,6 @@ public interface UserMapper {
 
     //login
     User findUserByUsername(String username);
+
+    User findUserByUserId(@Param("id")Integer id);
 }

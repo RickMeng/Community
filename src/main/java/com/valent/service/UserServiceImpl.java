@@ -26,6 +26,7 @@ public class UserServiceImpl implements UserService{
 
                 //如果用户登陆成功，把user【对象】存到session中
                 session.setAttribute("user",user);
+                session.setMaxInactiveInterval(3600);
                 return "101";//登陆成功
             }else {
                 return "102";
@@ -37,5 +38,9 @@ public class UserServiceImpl implements UserService{
 
     public User findUserByUsername(String Username) {
         return userMapper.findUserByUsername(Username);
+    }
+
+    public User findUserByUserId(Integer id) {
+        return userMapper.findUserByUserId(id);
     }
 }

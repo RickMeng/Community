@@ -18,5 +18,7 @@ public interface PostMapper {
 
     Post selectById(@Param("id")Integer id);
 
+    void AddViewCount(@Param("id")Integer id);
+
 
 }

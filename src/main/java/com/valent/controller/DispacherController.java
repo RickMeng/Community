@@ -21,11 +21,11 @@ public class DispacherController {
 
     @RequestMapping("/index")
     public String index(String title, String page, Model model){
-        //主体
-         Subject subject = SecurityUtils.getSubject();
+        //主体,通过subject来获得user,因为UserRealm中simpleAuthenticationInfo传入的就是user对象
+         //Subject subject = SecurityUtils.getSubject();
         //身份
-        User user = (User)subject.getPrincipal();
-        model.addAttribute("user",user);
+        //User user = (User)subject.getPrincipal();
+        //model.addAttribute("user",user);
 
 
         // default first page is 1 (the first page)

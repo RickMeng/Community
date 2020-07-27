@@ -12,19 +12,22 @@
         <property name="successUrl" value="/index"></property>
         <property name="unauthorizedUrl" value="/refuse.jsp"></property>
         <!-- 过虑器链定义，从上向下顺序执行，一般将/**放在最下边 -->
+        <!--控制部分 访问xx资源 需要xx权限-->
+        <!--anno：直接放行  authc：需要认证-->
         <property name="filterChainDefinitions">
             <value>
                 <!-- 退出拦截，请求logout.action执行退出操作 -->
-                /logout = logout
+                <!--/logout = logout-->
                 <!--对于静态资源可以匿名访问-->
                 /js/** = anon
                 /img/** = anon
                 /css/** = anon
-                <!--/assets/** = anon-->
                 /index = anon
 
                 <!--指定需要认证的路径-->
-                /user/login = authc
+                <!--只要不是anon的路径，如果没有登陆，那么自动会跳转到登陆页面，见上方loginURL-->
+                <!--/user/login = authc-->
+                /** = anon
             </value>
         </property>
     </bean>

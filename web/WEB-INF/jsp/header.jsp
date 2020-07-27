@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <header>
     <nav class="nav-wrapper teal darken-2">
         <div class="container">
@@ -9,7 +10,7 @@
             </a>
             <ul class="right hide-on-med-and-down">
                 <c:if test="${user == null}">
-                    <li><a href="${pageContext.request.contextPath}/user/login">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/loginpage">Login</a></li>
                     <li><a href="${pageContext.request.contextPath}/user/registerpage">Register</a></li>
                 </c:if>
                 <c:if test="${user != null}">
@@ -19,10 +20,18 @@
                     <li><a href="">Notification <span class="new badge white-text">4</span></a></li>
                     <li><a href="${pageContext.request.contextPath}/user/logout">Layout</a></li>
                 </c:if>
+
+<%--                    <shiro:guest>--%>
+<%--                        <li><a href="${pageContext.request.contextPath}/user/loginpage">Login</a></li>--%>
+<%--                        <li><a href="${pageContext.request.contextPath}/user/registerpage">Register</a></li>--%>
+<%--                    </shiro:guest>--%>
+<%--                    <shiro:user>--%>
+<%--                        <li><shiro:principal property="username"/> </li>--%>
+<%--                    </shiro:user>--%>
             </ul>
             <ul class="sidenav grey lighten-2" id="mobile-menu">
                 <c:if test="${user == null}">
-                    <li><a href="${pageContext.request.contextPath}/user/login">Login</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/loginpage">Login</a></li>
                     <li><a href="${pageContext.request.contextPath}/user/registerpage">Register</a></li>
                 </c:if>
                 <c:if test="${user != null}">
@@ -31,6 +40,8 @@
                     <li><a href="${pageContext.request.contextPath}/user/logout">Layout</a></li>
                 </c:if>
             </ul>
+
+
 
         </div>
     </nav>

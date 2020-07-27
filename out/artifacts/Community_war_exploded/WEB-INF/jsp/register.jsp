@@ -80,10 +80,8 @@
                     return;
                 }
             }
-
         })
     }
-
 </script>
 
 </body>

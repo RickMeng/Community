@@ -32,41 +32,30 @@ public class UserRealm extends AuthorizingRealm {
     }
 
     // 认证：也就是登陆，获取信息给securityManager处理
+    // token 就是封装好的用户提交的用户名和密码
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken token) throws AuthenticationException {
-
-        // token 就是封装好的用户提交的用户名和密码
-        String Username = (String) token.getPrincipal();
-
-        User sysUser = userService.findUserByUsername(Username);
-        // 拿username从数据库中查询
-        // ....
-        // 如果查询不到则返回null
-        if (sysUser == null) {// 这里模拟查询不到
-            return null;
+        String username=(String) token.getPrincipal();
+        System.out.println("在realm中 显示"+username);
+        User sysUser=userService.findUserByUsername(username);
+        if(sysUser==null){
+            throw new UnknownAccountException("用户不存在");
         }
+        String password=sysUser.getPassword();
+        User user = new User();
+        user.setUserid(sysUser.getUserid());
+        user.setUsername(sysUser.getUsername());
+        user.setNickname(sysUser.getNickname());
+        System.out.println("到这一步了嘛");
 
-        // 获取从数据库查询出来的用户密码
-        String password = sysUser.getPassword();
-
-        //获取盐
-        //String salt = sysUser.getSalt();
-
-        // 构建用户身份信息
-        User Activeuser=new User();
-        Activeuser.setUserid(sysUser.getUserid());
-        Activeuser.setUsername(sysUser.getUsername());
-        Activeuser.setNickname(sysUser.getNickname());
-
-        // 返回认证信息由父类AuthenticatingRealm进行认证
-        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(
-                Activeuser, password, getName());
-
+        SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(user,password,getName());
         return simpleAuthenticationInfo;
     }
 
-    // 授权：给予用户资源授权
+    // 授权：给予用户资源授权 ,与过滤器组合使用
+    //在登录成功后，根据用户id获取到该用户的权限，并把权限保存在安全管理器之中，
+    // 当用户访问的时候，会从管理器中判断该用户是否有权限去访问该url。
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(
             PrincipalCollection principals) {

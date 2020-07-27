@@ -37,7 +37,11 @@
     </insert>
 
 
-    <select id="selectById" parameterType="string" resultType="Post">
+    <select id="selectById" parameterType="java.lang.Integer" resultType="Post">
         select * from community.post where postid=#{id}
     </select>
+
+    <update id="AddViewCount" parameterType="java.lang.Integer" >
+        update community.post set viewcount=viewcount+1 where postid=#{id};
+    </update>
 </mapper>

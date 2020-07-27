@@ -14,4 +14,6 @@ public interface PostService {
     void insertPost(Post post, HttpSession session);
 
     Post selectById(Integer id);
+
+    Post selectAndViewCountPlusOne(Integer id);
 }

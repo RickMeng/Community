@@ -21,7 +21,8 @@
     <div class="row">
         <div class="col s12 l5 offset-l3">
             <h2 class="teal-text text-lighten-3">Login</h2>
-            <form   method="post" id="loginform" action="${pageContext.request.contextPath}/user/login">
+<%--            <form   method="post" id="loginform" action="${pageContext.request.contextPath}/user/login">--%>
+            <form   method="post" id="loginform" >
                 <div class="input-field">
                     <input type="text" id="username" name="username">
                     <label for="username" id="ulabel">Username</label>
@@ -31,10 +32,10 @@
                     <label for="password"id="plabel">Password</label>
                 </div>
                 <div class="input-field center">
-                    <input class="btn" type="submit" value="Login">
-<%--                    <button class="btn-large waves-effect waves-light" type="submit" onclick="login()">--%>
-<%--                        <i class="material-icons right">LOG</i>--%>
-<%--                    </button>--%>
+<%--                    <input class="btn" type="submit" value="Login">--%>
+                    <button class="btn-large waves-effect waves-light" type="submit" onclick="login()">
+                        <i class="material-icons right">Submit</i>
+                    </button>
                 </div>
 
             </form>
