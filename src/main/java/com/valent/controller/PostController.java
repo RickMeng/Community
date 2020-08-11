@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -31,20 +32,36 @@ public class PostController {
     }
 
     @RequestMapping("/save")
-    public String save(Post post, HttpSession session){
+    public String save(Post post, HttpSession session) throws IOException {
         postService.insertPost(post,session);
         return "redirect:/index";
+
     }
+
 
     @RequestMapping("/detail")
     public String detail(String id, Model model){
         Post post=postService.selectAndViewCountPlusOne(Integer.valueOf(id));
         User user=userService.findUserByUserId(post.getUserId());
         List<Comment> commentList = commentService.selectAllByPostId(Integer.valueOf(id));
-        model.addAttribute("user",user);
+        model.addAttribute("userOfPost",user);
         model.addAttribute("post",post);
         model.addAttribute("commentList",commentList);
         return "postDetail";
     }
+
+    @RequestMapping("management")
+    public String management(HttpSession session,Model model){
+        List<Post> postList = postService.selectByUserId(session);
+        model.addAttribute("postList",postList);
+        return "postManagement";
+    }
+
+    @RequestMapping("delete")
+    public String delete(int postId){
+        postService.deletePost(postId);
+        return "redirect:/post/management";
+    }
+
 
 }

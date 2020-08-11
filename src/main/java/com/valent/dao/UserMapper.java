@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 public interface UserMapper {
 
     //register
-    void insertUser(User user);
+    int insertUser(User user);
 
     //login
     User findUserByUsername(String username);

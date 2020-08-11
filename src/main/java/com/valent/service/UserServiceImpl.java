@@ -14,8 +14,9 @@ public class UserServiceImpl implements UserService{
     private UserMapper userMapper;
 
 
-    public void register(User user) {
-        userMapper.insertUser(user);
+    public int register(User user) {
+        //userMapper.insertUser(user);
+        return userMapper.insertUser(user);
 
     }
 

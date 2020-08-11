@@ -9,12 +9,13 @@ public class UserTest {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
         UserMapper userMapper=context.getBean("userMapper", UserMapper.class);
-        System.out.println(userMapper.findUserByUserId(1).getNickname());
-//        User user = new User();
-//        user.setUsername("wang");
-//        user.setPassword("123456");
-//        user.setNickname("wang");
-//        user.setProfile("nothing");
-//        userMapper.insertUser(user);
+        //System.out.println(userMapper.findUserByUserId(1).getNickname());
+        User user = new User();
+        user.setUsername("wang2");
+        user.setPassword("123456");
+        user.setNickname("wang");
+        user.setProfile("nothing");
+        int res = userMapper.insertUser(user);
+        System.out.println("insert的结果是"+res);
     }
 }

@@ -21,6 +21,14 @@ public class PostServiceImpl implements PostService{
         return postMapper.selectAll((currentPage-1)*pageCount,pageCount,title);
     }
 
+    public void deletePost(Integer postId) {
+        postMapper.deletePost(postId);
+    }
+
+    public List<Post> selectByUserId(HttpSession session) {
+        User user = (User) session.getAttribute("user");
+        return postMapper.selectByUserId(user.getUserid());
+    }
 
     //pageCount 每页记录数
     //total 总记录数

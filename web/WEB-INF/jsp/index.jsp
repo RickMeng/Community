@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sys" uri="/WEB-INF/tld/fns.tld" %>
 <html>
 <head>
     <title>Community</title>
@@ -22,35 +23,21 @@
 <body>
 <jsp:include page="header.jsp"/>
 
-<%--Butten area--%>
-<div class="fixed-action-btn ">
-    <a class="btn-floating btn-large teal darken-2 ">
-        <i class="large material-icons ">mode_edit</i>
-    </a>
-    <ul>
-        <li><a class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-        <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-        <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-        <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
-    </ul>
-</div>
 
 <div class="container">
+
     <div class="row">
-        <div class="col s12 l7 offset-l2">
+
+
+        <div class="col s12 l7 offset-l2 ">
+            <%--<a>${notificationNumber}++++++++++++</a>--%>
             <%--search area--%>
             <form action="${pageContext.request.contextPath}/index" method="post">
                 <div class="input-field">
                     <i class="material-icons prefix">search</i>
-                    <input id="search" placeholder="Type keyword" type="text" class="validate" value="${title}">
+                    <input id="search" placeholder="Type keyword" type="text" class="validate" value="${title}" name="title">
                 </div>
-            <%--tag area--%>
-            <a class="waves-effect waves-light btn">Life</a>
-            <a class="waves-effect waves-light btn">Second-hand</a>
-            <a class="waves-effect waves-light btn">Food</a>
-            <%--href="javascript:;" 这个可以屏蔽a标签的跳转--%>
-            <a class="btn-floating btn-large waves-effect waves-light red" href="javascript:;" onclick="publish()"><i class="material-icons">add</i></a>
-            <br>
+            </form>
             <%--content area--%>
             <div class="collection">
                 <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
@@ -58,12 +45,14 @@
                 <a href="#!" class="collection-item">Alan</a>
                 <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
                 <a href="#!" class="collection-item">Alan</a>
+                <a href="#!" class="collection-item">Alan</a>
+                <a href="#!" class="collection-item">Alan</a>
                 <c:if test="${postList!=null}">
                     <c:forEach items="${postList}" var="post">
-                        <a href="${pageContext.request.contextPath}/post/detail?id=${post.postId}" class="collection-item"><span class="badge">${post.viewCount}</span>${post.title}</a>
+                        <a href="${pageContext.request.contextPath}/post/detail?id=${post.postId}" class="collection-item"><span class="badge">${sys:getUser(post.userId).nickname} ${post.viewCount}</span>${post.title} </a>
                     </c:forEach>
                 </c:if>
-                <c:if test="${postList==null}">
+                <c:if test="${postList==null}">p
                     <a href="#!" class="collection-item">Nothing</a>
                 </c:if>
 
@@ -71,7 +60,7 @@
 
         </div>
         <%--pagination--%>
-        <div class="col s12 l8 offset-l4">
+        <div class="col s8 l6 offset-l4 offset-s2 ">
             <ul class="pagination">
                 <c:if test="${currentPage ne 1}">
                     <%--注意这边的disabled--%>
@@ -94,6 +83,7 @@
     $(document).ready(function(){
         $(".sidenav").sidenav();
         $('.fixed-action-btn').floatingActionButton();
+        $(".dropdown-trigger").dropdown();
     });
 
     function publish(){
@@ -104,7 +94,18 @@
             window.location.href="${pageContext.request.contextPath}/post/form";
         }
     }
+
+    function addItem(){
+        var user = "${user}";
+        if(user==""){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/item/form";
+        }
+    }
+
 </script>
 
+<jsp:include page="footer.jsp"/>
 </body>
 </html>

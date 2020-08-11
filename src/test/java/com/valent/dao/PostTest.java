@@ -11,19 +11,20 @@ public class PostTest {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-dao.xml");
         PostMapper postMapper=context.getBean("postMapper", PostMapper.class);
 
-//        for(Post post: postMapper.selectAll()){
-//            System.out.println(post);
+        for(Post post: postMapper.selectAll(0,1,"war")) {
+            System.out.println(post);
+        }
 
 //        Post post = new Post();
 //        post.setUserId(1);
 //        post.setTagId(2);
-//        post.setTitle("war");
-//        post.setContent("end");
-//        postMapper.insertPost(post);
+//        post.setTitle("Forest");
+//        post.setContent("Green");
+//        System.out.println("测试"+postMapper.insertPost(post));
 
-        System.out.println(postMapper.selectById(1).getViewCount());
-        postMapper.AddViewCount(1);
-        System.out.println(postMapper.selectById(1).getViewCount());
+//        System.out.println(postMapper.selectById(1).getViewCount());
+//        postMapper.AddViewCount(1);
+//        System.out.println(postMapper.selectById(1).getViewCount());
 
     }
 }

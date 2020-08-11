@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.valent.dao.ItemMapper">
+
+    <insert id="insertItem" parameterType="Item">
+        insert into community.item(userId,price,content,img,createTime,itemName)
+        values (#{userId},#{price},#{content},#{img},#{createTime},#{itemName})
+    </insert>
+
+    <select id="selectAll" resultType="Item">
+        select * from community.item order by itemId desc
+    </select>
+
+
+</mapper>

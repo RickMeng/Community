@@ -8,12 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Registraion</title>
+    <title>Post Form</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/materialize.min.css" type="text/css"  media="screen,projection">
     <script src="${pageContext.request.contextPath}/js/jquery-3.5.1.js"></script>
     <script src="${pageContext.request.contextPath}/js/materialize.js"></script>
-    <script src="//cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>
+    <script src="${pageContext.request.contextPath}/js/ckeditor/ckeditor.js"></script>
+    <%--<script src="//cdn.ckeditor.com/4.14.1/basic/ckeditor.js"></script>--%>
 
 </head>
 <body>
@@ -55,18 +56,31 @@
     $(document).ready(function(){
         $(".sidenav").sidenav();
         $('select').formSelect();
+        $(".dropdown-trigger").dropdown();
     });
+    function publish(){
+        var user = "${user}";
+        if(user==""){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/post/form";
+        }
+    }
+
+    function addItem(){
+        var user = "${user}";
+        if(user==""){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/item/form";
+        }
+    }
 
 </script>
 
 <script>
     CKEDITOR.replace( 'editor' );
 </script>
-
-
-
-
-
 
 
 

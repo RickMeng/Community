@@ -16,7 +16,7 @@
 </head>
 <body>
 <jsp:include page="header.jsp"/>
-
+<br><br><br><br>
 <section class="section container" id="register">
     <div class="row">
         <div class="col s12 l5 offset-l3">
@@ -33,8 +33,8 @@
                 </div>
                 <div class="input-field center">
 <%--                    <input class="btn" type="submit" value="Login">--%>
-                    <button class="btn-large waves-effect waves-light" type="submit" onclick="login()">
-                        <i class="material-icons right">Submit</i>
+                    <button class="btn-small waves-effect waves-light" type="submit" onclick="login()">
+                        <i class="material-icons right">SUBMIT</i>
                     </button>
                 </div>
 
@@ -49,10 +49,7 @@
     });
 </script>
 
-
-
 <script>
-
     function login() {
         //获取表单信息
         //这个formData获取到的信息是键值对的形式，key是name，name一定要和controller里对应
@@ -129,7 +126,32 @@
 
 
 
+<script>
+    $(document).ready(function(){
+        $(".sidenav").sidenav();
+        $('.modal').modal();
+        $(".dropdown-trigger").dropdown();
+    });
+    function publish(){
+        var user = "${user}";
+        if(user==""){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/post/form";
+        }
+    }
 
+    function addItem(){
+        var user = "${user}";
+        if(user==""){
+            alert("Please log in!")
+        }else {
+            window.location.href="${pageContext.request.contextPath}/item/form";
+        }
+    }
+
+
+</script>
 
 
 </body>

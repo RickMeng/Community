@@ -8,5 +8,9 @@ import java.util.List;
 public interface CommentService {
     List<Comment> selectAllByPostId(Integer id);
 
-    void insertComment(Comment comment, HttpSession session);
+    String insertComment(int postId,String content, HttpSession session);
+
+    List<Comment> selectUnCheckedByAndUserId(Integer userId);
+
+    void updateChecked(Integer commentId);
 }

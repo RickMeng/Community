@@ -6,13 +6,21 @@
 <mapper namespace="com.valent.dao.CommentMapper">
 
     <select id="selectAllByPostId" resultType="Comment" parameterType="java.lang.Integer">
-        select * from community.comment where postid=#{id} order by id desc;
+        select * from community.comment where postid=#{id} order by postid desc;
     </select>
 
-    <insert id="insertComment" parameterType="Comment">
-        insert into community.comment values(content,userid,postid,createtime)
+    <insert id="insertComment" parameterType="Comment" >
+        insert into community.comment(content,userid,postid,createtime)
         values (#{content},#{userId},#{postId},#{createTime})
     </insert>
+
+    <select id="selectUnCheckedByAndUserId" resultType="Comment">
+        select * from community.comment where userId=#{userId} and checked=0;
+    </select>
+
+    <update id="updateChecked" parameterType="java.lang.Integer">
+        update community.comment set checked=1 where commentId=#{commentId}
+    </update>
 
 
 

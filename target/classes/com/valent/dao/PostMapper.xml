@@ -7,7 +7,7 @@
 <!--namespace绑定一个对应的dao/mapper接口-->
 <mapper namespace="com.valent.dao.PostMapper">
 
-    <sql id="query_question_clause">
+    <sql id="query_post_clause">
         <if test="title != null and title != ''">
             and title like concat('%',#{title},'%')
         </if>
@@ -17,7 +17,7 @@
     <select id="selectAll" resultType="com.valent.pojo.Post">
     select * from community.post
     <where>
-        <include refid="query_question_clause"></include>
+        <include refid="query_post_clause"></include>
     </where>
     limit #{beginPage},#{pageCount}
     </select>
@@ -26,7 +26,7 @@
     <select id="getTotal"  resultType="java.lang.Integer" parameterType="string" >
         select count(1) from community.post
         <where>
-            <include refid="query_question_clause"></include>
+            <include refid="query_post_clause"></include>
         </where>
     </select>
 
@@ -44,4 +44,12 @@
     <update id="AddViewCount" parameterType="java.lang.Integer" >
         update community.post set viewcount=viewcount+1 where postid=#{id};
     </update>
+
+    <select id="selectByUserId" parameterType="java.lang.Integer" resultType="Post">
+        select * from community.post where userId=#{userId}
+    </select>
+
+    <delete id="deletePost" parameterType="java.lang.Integer">
+        delete from community.post where postId=#{postId}
+    </delete>
 </mapper>

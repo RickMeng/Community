@@ -1,7 +1,9 @@
 package com.valent.controller;
 
 
+import com.valent.pojo.Comment;
 import com.valent.pojo.User;
+import com.valent.service.CommentService;
 import com.valent.service.UserService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
@@ -20,6 +22,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -27,6 +30,9 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private CommentService commentService;
 
     //to loginpage
     @RequestMapping("/loginpage")
@@ -41,7 +47,7 @@ public class UserController {
     }
 
     //login request
-//version1
+    //version1
     @ResponseBody
     @RequestMapping("/login")
     public String login(String username, String password, HttpSession session){
@@ -98,8 +104,30 @@ public class UserController {
         user.setNickname(nickname);
         user.setProfile(profile);
         user.setCreatetime(new Date());
-        userService.register(user);
-        return "success";
+        int res = userService.register(user);
+        String msg = "";
+        if(res == 1){
+            msg="100";
+        }else {
+            msg="101";
+        }
+        return msg;
+
+    }
+
+    @ResponseBody
+    @RequestMapping("validateUsername")
+    public String validateUsername(String username){
+        String message="";
+        User user= userService.findUserByUsername(username);
+        if(username!=null){
+            if(user!=null){
+                message = "101";
+            }else {
+                message = "100";
+            }
+        }
+        return message;
     }
 
     @RequestMapping("/logout")
@@ -107,6 +135,20 @@ public class UserController {
         session.invalidate();
         return "redirect:/index";
 
+    }
+
+    @RequestMapping("/notification")
+    public String notification(HttpSession session,Model model){
+        //need something
+        //传入comment（check都是0)
+        //同时把评论check设置成1；
+        User user =(User) session.getAttribute("user");
+        List<Comment> commentList = commentService.selectUnCheckedByAndUserId(user.getUserid());
+        for(Comment comment:commentList){
+            commentService.updateChecked(comment.getCommentId());
+        }
+        model.addAttribute("commentList",commentList);
+        return "notification";
     }
 
 

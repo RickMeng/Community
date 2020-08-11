@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface PostMapper {
 
-    void insertPost(Post post);
+    int insertPost(Post post);
 
     //query all the posts
     List<Post> selectAll(@Param("beginPage")Integer beginpage,@Param("pageCount")Integer pageCount,@Param("title")String title);
@@ -19,6 +19,10 @@ public interface PostMapper {
     Post selectById(@Param("id")Integer id);
 
     void AddViewCount(@Param("id")Integer id);
+
+    List<Post> selectByUserId(@Param("userId")Integer userId);
+
+    void deletePost(@Param("postId") Integer postId);
 
 
 }

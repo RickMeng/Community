@@ -1,6 +1,7 @@
 package com.valent.service;
 
 import com.valent.pojo.Post;
+import org.apache.ibatis.annotations.Param;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -16,4 +17,8 @@ public interface PostService {
     Post selectById(Integer id);
 
     Post selectAndViewCountPlusOne(Integer id);
+
+    List<Post> selectByUserId(HttpSession session);
+
+    void deletePost( Integer postId);
 }

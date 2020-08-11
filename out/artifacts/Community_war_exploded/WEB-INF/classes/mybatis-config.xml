@@ -16,6 +16,8 @@
     <mappers>
         <mapper resource="com/valent/dao/UserMapper.xml"/>
         <mapper resource="com/valent/dao/PostMapper.xml"/>
+        <mapper resource="com/valent/dao/CommentMapper.xml"/>
+        <mapper resource="com/valent/dao/CollectMapper.xml"/>
     </mappers>
 
 </configuration>

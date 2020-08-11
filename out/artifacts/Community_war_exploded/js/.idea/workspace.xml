@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d8e0267a-647a-49e1-b1e8-012dba649155" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/CollectController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/ItemController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CollectMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CollectMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/ItemMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/ItemMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/pojo/Collect.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/pojo/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CollectService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CollectServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/ItemService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/ItemServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/utils/SysUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/test/java/com/valent/Service/CommentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/CollectionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/ItemTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB-INF/jsp/collectList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB-INF/jsp/itemForm.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB-INF/jsp/itemList.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../WEB-INF/tld/fns.tld" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../.idea/artifacts/Community_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/artifacts/Community_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/DispacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/DispacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/PostMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/dao/PostMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/com/valent/service/PostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/spring-dao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/spring-dao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/postDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/postDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/postForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/jsp/postForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../out/artifacts/Community_war_exploded/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/DispacherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/DispacherController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CommentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CommentMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/PostMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/dao/PostMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/java/com/valent/service/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/main/resources/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/main/resources/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/CommentTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/CommentTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/PostTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/test/java/com/valent/dao/PostTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/controller/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/controller/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/controller/DispacherController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/controller/DispacherController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/controller/PostController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/controller/PostController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/dao/CommentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/dao/CommentMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/dao/CommentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/dao/CommentMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/dao/PostMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/dao/PostMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/service/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/service/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/com/valent/service/PostServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/com/valent/service/PostServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/classes/spring-mvc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/classes/spring-mvc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/test-classes/com/valent/dao/CommentTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/test-classes/com/valent/dao/CommentTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../target/test-classes/com/valent/dao/PostTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../target/test-classes/com/valent/dao/PostTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/jsp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/jsp/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/jsp/postDetail.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/jsp/postDetail.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/jsp/postForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/jsp/postForm.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../WEB-INF/web.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1frWXn4tIluzpTrxESp4eOiE3FZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8e0267a-647a-49e1-b1e8-012dba649155" name="Default Changelist" comment="" />
+      <created>1596976733449</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1596976733449</updated>
+      <workItem from="1596976753731" duration="26000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+</project>

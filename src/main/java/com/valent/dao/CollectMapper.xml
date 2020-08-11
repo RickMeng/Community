@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.valent.dao.CollectMapper">
+
+    <select id="findByUserId" parameterType="java.lang.Integer" resultType="Collect">
+        /*注意这里是userid还是userId*/
+        select * from community.collect where userid=#{userId}
+    </select>
+
+    <select id="findByCollectId" parameterType="java.lang.Integer" resultType="Collect">
+        select * from community.collect where collectid=#{id}
+    </select>
+
+    <insert id="insertCollect" parameterType="Collect">
+        insert into community.collect(postId,userId)
+        values (#{postId},#{userId})
+    </insert>
+
+    <delete id="deleteCollect" parameterType="java.lang.Integer">
+        delete from community.collect where collectId=#{id}
+    </delete>
+
+
+</mapper>

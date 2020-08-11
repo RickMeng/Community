@@ -13,6 +13,14 @@ import java.util.List;
 @Service
 public class CommentServiceImpl implements CommentService {
 
+    public List<Comment> selectUnCheckedByAndUserId(Integer userId) {
+        return commentMapper.selectUnCheckedByAndUserId(userId);
+    }
+
+    public void updateChecked(Integer commentId) {
+        commentMapper.updateChecked(commentId);
+    }
+
     @Autowired
     private CommentMapper commentMapper;
 
@@ -20,17 +28,26 @@ public class CommentServiceImpl implements CommentService {
         return commentMapper.selectAllByPostId(id);
     }
 
-    public void insertComment(Comment comment, HttpSession session) {
-        comment.setCreateTime(new Date());
+    public String insertComment(int postId,String content, HttpSession session) {
+        Comment comment =new Comment();
         User user = (User) session.getAttribute("user");
         comment.setUserId(user.getUserid());
+        comment.setContent(content);
+        comment.setPostId(postId);
+        comment.setCreateTime(new Date());
 //        //匿名回复功能
 //        if(user==null){
 //            comment.setUserId(1);
 //        }else {
 //            comment.setUserId(user.getUserid());
 //        }
-        commentMapper.insertComment(comment);
+        int result = commentMapper.insertComment(comment);
+        if(result==1){
+            System.out.println("service层返回101");
+            return "101";
+        }else {
+            return "102";
+        }
 
     }
 }
